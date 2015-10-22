@@ -170,14 +170,6 @@ config CPU_FREQ_DEFAULT_GOV_GALLIMAUFRY
 	A pimped out ondemand governor.
         This features earlysuspend, hotplugging, a
         2-phase algo, and tweaks to make it more aggressive.
-
-config CPU_FREQ_DEFAULT_GOV_AGGRESSIVE
-	bool "aggressive"
-	select CPU_FREQ_GOV_AGGRESSIVE
-	help
-	A pimped out conservative governor.
-        This features earlysuspend, hotplugging,
-        and tweaks to make it more aggressive.
 	  
 config CPU_FREQ_DEFAULT_GOV_GALAXYICS
 		bool "galaxyics"
@@ -414,11 +406,6 @@ config CPU_FREQ_GOV_GALLIMAUFRY
 	help
 	Help is a lie.
 
-config CPU_FREQ_GOV_AGGRESSIVE
-	tristate "'aggressive' governor"
-  depends on CPU_FREQ
-	help
-	Help is a lie.
 
 config CPU_FREQ_GOV_WHEATLEY
 	tristate "'wheatley' cpufreq policy governor"
@@ -436,24 +423,6 @@ config CPU_FREQ_GOV_WHEATLEY
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
-
-config CPU_FREQ_GOV_DYNAMIC_INTERACTIVE
-	tristate "'dynamic interactive' cpufreq policy governor"
-	help
-	  'dynamic interactive' - This driver adds a dynamic cpufreq policy governor
-	  designed for latency-sensitive workloads.
-
-	  This governor attempts to reduce the latency of clock
-	  increases so that the system is more responsive to
-	  interactive workloads.
-
-	  To compile this driver as a module, choose M here: the
-	  module will be called cpufreq_interactive.
-
-	  For details, take a look at linux/Documentation/cpu-freq.
-
-	  If in doubt, say N.
-
 
 menu "x86 CPU frequency scaling drivers"
 depends on X86
