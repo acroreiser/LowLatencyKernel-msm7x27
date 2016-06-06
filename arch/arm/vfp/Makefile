@@ -7,7 +7,13 @@
 # ccflags-y := -DDEBUG
 # asflags-y := -DDEBUG
 
-KBUILD_AFLAGS	:=$(KBUILD_AFLAGS:-msoft-float=-Wa,-mfpu=softvfp+vfp)
+
+ifeq ($(CONFIG_KBUILD_HARD_FLOAT),y)
+ KBUILD_AFLAGS	:=$(KBUILD_AFLAGS:-mhard-float=-Wa,-mfpu=vfp -mfloat-abi=hard)
+else
+ KBUILD_AFLAGS	:=$(KBUILD_AFLAGS:-msoft-float=-Wa,-mfpu=softvfp+vfp -mfloat-abi=soft)
+endif
+
 LDFLAGS		+=--no-warn-mismatch
 
 obj-y			+= vfp.o
