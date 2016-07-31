@@ -18,7 +18,7 @@ ifndef CONFIG_ARCH_MSM8X60
 ifndef CONFIG_ARCH_FSM9XXX
 		obj-$(CONFIG_REGULATOR) += footswitch-pcom.o
 endif
-		obj-$(CONFIG_DEBUG_FS) += pmic_debugfs.o
+		# obj-$(CONFIG_DEBUG_FS) += pmic_debugfs.o
 	endif
 endif
 
