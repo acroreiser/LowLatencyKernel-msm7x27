@@ -159,7 +159,7 @@ extern void vfp_flush_hwstate(struct thread_info *);
 /*
  * Change these and you break ASM code in entry-common.S
  */
-#define _TIF_WORK_MASK		0x000000ff
+#define _TIF_WORK_MASK		(_TIF_NEED_RESCHED | _TIF_SIGPENDING | _TIF_NOTIFY_RESUME)
 
 #endif /* __KERNEL__ */
 #endif /* __ASM_ARM_THREAD_INFO_H */
