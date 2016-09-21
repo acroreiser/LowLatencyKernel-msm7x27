@@ -170,17 +170,15 @@ int dirty_background_ratio_handler(struct ctl_table *table, int write,
 		void __user *buffer, size_t *lenp,
 		loff_t *ppos)
 {
-#ifndef CONFIG_DIRTY_RATIO_HARDCODE
 	int ret;
-
+#ifndef CONFIG_DIRTY_RATIO_HARDCODE
 	ret = proc_dointvec_minmax(table, write, buffer, lenp, ppos);
 	if (ret == 0 && write)
 		dirty_background_bytes = 0;
-	return ret;
 #else
-	dirty_background_bytes = 0;
-	return dirty_background_ratio;
+	ret = proc_dointvec_minmax(table, 0, buffer, lenp, ppos);
 #endif
+	return ret;
 }
 
 int dirty_background_bytes_handler(struct ctl_table *table, int write,
@@ -188,10 +186,13 @@ int dirty_background_bytes_handler(struct ctl_table *table, int write,
 		loff_t *ppos)
 {
 	int ret;
-
+#ifndef CONFIG_DIRTY_RATIO_HARDCODE
 	ret = proc_doulongvec_minmax(table, write, buffer, lenp, ppos);
 	if (ret == 0 && write)
 		dirty_background_ratio = 0;
+#else
+	ret = proc_doulongvec_minmax(table, 0, buffer, lenp, ppos);
+#endif
 	return ret;
 }
 
@@ -199,20 +200,18 @@ int dirty_ratio_handler(struct ctl_table *table, int write,
 		void __user *buffer, size_t *lenp,
 		loff_t *ppos)
 {
+	int ret;
 #ifndef CONFIG_DIRTY_RATIO_HARDCODE
 	int old_ratio = vm_dirty_ratio;
-	int ret;
-
 	ret = proc_dointvec_minmax(table, write, buffer, lenp, ppos);
 	if (ret == 0 && write && vm_dirty_ratio != old_ratio) {
 		update_completion_period();
 		vm_dirty_bytes = 0;
 	}
-	return ret;
 #else
-	vm_dirty_bytes = 0;
-	return vm_dirty_ratio;
+	ret = proc_dointvec_minmax(table, 0, buffer, lenp, ppos);
 #endif
+	return ret;
 }
 
 
@@ -220,14 +219,17 @@ int dirty_bytes_handler(struct ctl_table *table, int write,
 		void __user *buffer, size_t *lenp,
 		loff_t *ppos)
 {
-	unsigned long old_bytes = vm_dirty_bytes;
 	int ret;
-
+#ifndef CONFIG_DIRTY_RATIO_HARDCODE
+	unsigned long old_bytes = vm_dirty_bytes;
 	ret = proc_doulongvec_minmax(table, write, buffer, lenp, ppos);
 	if (ret == 0 && write && vm_dirty_bytes != old_bytes) {
 		update_completion_period();
 		vm_dirty_ratio = 0;
 	}
+#else
+	ret = proc_doulongvec_minmax(table, 0, buffer, lenp, ppos);
+#endif
 	return ret;
 }
 
