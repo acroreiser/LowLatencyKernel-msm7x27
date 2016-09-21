@@ -62,7 +62,7 @@ static inline long sync_writeback_pages(unsigned long dirtied)
  * Start background writeback (via writeback threads) at this percentage
  */
 #ifdef CONFIG_DECREASE_DIRTY_RATIO
-int dirty_background_ratio = 1;
+int dirty_background_ratio = 2;
 #else
 int dirty_background_ratio = 10;
 #endif
@@ -83,7 +83,7 @@ int vm_highmem_is_dirtyable;
  * The generator of dirty data starts writeback at this percentage
  */
 #ifdef CONFIG_DECREASE_DIRTY_RATIO
-int vm_dirty_ratio = 1;
+int vm_dirty_ratio = 4;
 #else
 int vm_dirty_ratio = 20;
 #endif
