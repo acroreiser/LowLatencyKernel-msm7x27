@@ -432,6 +432,7 @@ deps_arch/arm/mm/fault.o := \
     $(wildcard include/config/task/delay/acct.h) \
     $(wildcard include/config/fair/group/sched.h) \
     $(wildcard include/config/rt/group/sched.h) \
+    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/rcu/boost.h) \
     $(wildcard include/config/compat/brk.h) \
@@ -450,7 +451,6 @@ deps_arch/arm/mm/fault.o := \
     $(wildcard include/config/have/unstable/sched/clock.h) \
     $(wildcard include/config/irq/time/accounting.h) \
     $(wildcard include/config/debug/stack/usage.h) \
-    $(wildcard include/config/cgroup/sched.h) \
   include/linux/capability.h \
   /home/bootahn/desktop/LowLatencyKernel-msm7x27/arch/arm/include/asm/cputime.h \
   include/asm-generic/cputime.h \
@@ -578,6 +578,7 @@ deps_arch/arm/mm/fault.o := \
   include/linux/perf_event.h \
     $(wildcard include/config/perf/use/vmalloc.h) \
     $(wildcard include/config/cgroup/perf.h) \
+    $(wildcard include/config/cpu/sup/intel.h) \
   include/linux/cgroup.h \
   include/linux/cgroupstats.h \
   include/linux/taskstats.h \

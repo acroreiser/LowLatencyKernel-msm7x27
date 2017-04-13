@@ -79,7 +79,7 @@ main:
 	@ link register save eliminated.
 @ 45 "arch/arm/kernel/asm-offsets.c" 1
 	
-->TSK_ACTIVE_MM #460 offsetof(struct task_struct, active_mm)	@
+->TSK_ACTIVE_MM #468 offsetof(struct task_struct, active_mm)	@
 @ 0 "" 2
 @ 49 "arch/arm/kernel/asm-offsets.c" 1
 	

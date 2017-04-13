@@ -371,6 +371,7 @@ deps_arch/arm/kernel/perf_event.o := \
     $(wildcard include/config/perf/events.h) \
     $(wildcard include/config/perf/use/vmalloc.h) \
     $(wildcard include/config/cgroup/perf.h) \
+    $(wildcard include/config/cpu/sup/intel.h) \
   include/linux/ioctl.h \
   /home/bootahn/desktop/LowLatencyKernel-msm7x27/arch/arm/include/asm/ioctl.h \
   include/asm-generic/ioctl.h \
@@ -394,6 +395,7 @@ deps_arch/arm/kernel/perf_event.o := \
     $(wildcard include/config/task/delay/acct.h) \
     $(wildcard include/config/fair/group/sched.h) \
     $(wildcard include/config/rt/group/sched.h) \
+    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/rcu/boost.h) \
     $(wildcard include/config/compat/brk.h) \
@@ -411,7 +413,6 @@ deps_arch/arm/kernel/perf_event.o := \
     $(wildcard include/config/have/unstable/sched/clock.h) \
     $(wildcard include/config/stack/growsup.h) \
     $(wildcard include/config/debug/stack/usage.h) \
-    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/mm/owner.h) \
   include/linux/capability.h \
   include/linux/mm_types.h \

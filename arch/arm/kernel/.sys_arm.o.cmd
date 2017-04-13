@@ -355,6 +355,7 @@ deps_arch/arm/kernel/sys_arm.o := \
     $(wildcard include/config/task/delay/acct.h) \
     $(wildcard include/config/fair/group/sched.h) \
     $(wildcard include/config/rt/group/sched.h) \
+    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/rcu/boost.h) \
     $(wildcard include/config/compat/brk.h) \
@@ -375,7 +376,6 @@ deps_arch/arm/kernel/sys_arm.o := \
     $(wildcard include/config/proc/fs.h) \
     $(wildcard include/config/stack/growsup.h) \
     $(wildcard include/config/debug/stack/usage.h) \
-    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/mm/owner.h) \
   include/linux/capability.h \
   include/linux/rbtree.h \
@@ -572,6 +572,7 @@ deps_arch/arm/kernel/sys_arm.o := \
   include/linux/perf_event.h \
     $(wildcard include/config/perf/use/vmalloc.h) \
     $(wildcard include/config/cgroup/perf.h) \
+    $(wildcard include/config/cpu/sup/intel.h) \
   include/linux/cgroup.h \
   include/linux/cgroupstats.h \
   include/linux/taskstats.h \

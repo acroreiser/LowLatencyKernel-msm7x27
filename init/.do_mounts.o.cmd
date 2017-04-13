@@ -360,6 +360,7 @@ deps_init/do_mounts.o := \
     $(wildcard include/config/task/delay/acct.h) \
     $(wildcard include/config/fair/group/sched.h) \
     $(wildcard include/config/rt/group/sched.h) \
+    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/rcu/boost.h) \
     $(wildcard include/config/compat/brk.h) \
@@ -379,7 +380,6 @@ deps_init/do_mounts.o := \
     $(wildcard include/config/proc/fs.h) \
     $(wildcard include/config/stack/growsup.h) \
     $(wildcard include/config/debug/stack/usage.h) \
-    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/mm/owner.h) \
   include/linux/capability.h \
   include/linux/rbtree.h \
@@ -731,9 +731,11 @@ deps_init/do_mounts.o := \
     $(wildcard include/config/net/dma.h) \
     $(wildcard include/config/network/secmark.h) \
     $(wildcard include/config/network/phy/timestamping.h) \
+    $(wildcard include/config/netfilter/xt/target/trace.h) \
   include/linux/kmemcheck.h \
   include/linux/net.h \
   include/linux/random.h \
+    $(wildcard include/config/arch/random.h) \
   include/linux/irqnr.h \
   include/linux/textsearch.h \
   include/net/checksum.h \
@@ -897,6 +899,7 @@ deps_init/do_mounts.o := \
   include/linux/trace_seq.h \
   include/linux/perf_event.h \
     $(wildcard include/config/perf/use/vmalloc.h) \
+    $(wildcard include/config/cpu/sup/intel.h) \
   /home/bootahn/desktop/LowLatencyKernel-msm7x27/arch/arm/include/asm/perf_event.h \
   /home/bootahn/desktop/LowLatencyKernel-msm7x27/arch/arm/include/asm/local64.h \
   include/asm-generic/local64.h \

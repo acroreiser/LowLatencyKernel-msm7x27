@@ -357,6 +357,7 @@ deps_arch/arm/kernel/init_task.o := \
     $(wildcard include/config/task/delay/acct.h) \
     $(wildcard include/config/fair/group/sched.h) \
     $(wildcard include/config/rt/group/sched.h) \
+    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/preempt/rcu.h) \
     $(wildcard include/config/rcu/boost.h) \
@@ -377,7 +378,6 @@ deps_arch/arm/kernel/init_task.o := \
     $(wildcard include/config/have/unstable/sched/clock.h) \
     $(wildcard include/config/irq/time/accounting.h) \
     $(wildcard include/config/debug/stack/usage.h) \
-    $(wildcard include/config/cgroup/sched.h) \
   /home/bootahn/desktop/LowLatencyKernel-msm7x27/arch/arm/include/asm/param.h \
     $(wildcard include/config/hz.h) \
   include/linux/capability.h \
@@ -594,6 +594,7 @@ deps_arch/arm/kernel/init_task.o := \
     $(wildcard include/config/net/dma.h) \
     $(wildcard include/config/network/secmark.h) \
     $(wildcard include/config/network/phy/timestamping.h) \
+    $(wildcard include/config/netfilter/xt/target/trace.h) \
   include/linux/kmemcheck.h \
   include/linux/net.h \
   include/linux/socket.h \
@@ -601,6 +602,7 @@ deps_arch/arm/kernel/init_task.o := \
   /home/bootahn/desktop/LowLatencyKernel-msm7x27/arch/arm/include/asm/sockios.h \
   include/linux/sockios.h \
   include/linux/random.h \
+    $(wildcard include/config/arch/random.h) \
   include/linux/irqnr.h \
   include/linux/textsearch.h \
   include/linux/slab.h \

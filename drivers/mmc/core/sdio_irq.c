@@ -27,9 +27,8 @@
 
 #include "sdio_ops.h"
 
-static int process_sdio_pending_irqs(struct mmc_card *host)
+static int process_sdio_pending_irqs(struct mmc_card *card)
 {
-	struct mmc_card *card = host->card;
 	int i, ret, count;
 	unsigned char pending;
 
@@ -102,7 +101,7 @@ static int sdio_irq_thread(void *_host)
 		ret = __mmc_claim_host(host, &host->sdio_irq_thread_abort);
 		if (ret)
 			break;
-		ret = process_sdio_pending_irqs(host);
+		ret = process_sdio_pending_irqs(host->card);
 		host->sdio_irq_pending = false;
 		mmc_release_host(host);
 

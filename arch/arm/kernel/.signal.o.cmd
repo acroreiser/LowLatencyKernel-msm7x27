@@ -135,6 +135,7 @@ deps_arch/arm/kernel/signal.o := \
     $(wildcard include/config/task/delay/acct.h) \
     $(wildcard include/config/fair/group/sched.h) \
     $(wildcard include/config/rt/group/sched.h) \
+    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/preempt/notifiers.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/preempt/rcu.h) \
@@ -168,7 +169,6 @@ deps_arch/arm/kernel/signal.o := \
     $(wildcard include/config/stack/growsup.h) \
     $(wildcard include/config/debug/stack/usage.h) \
     $(wildcard include/config/preempt.h) \
-    $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/mm/owner.h) \
   /home/bootahn/desktop/LowLatencyKernel-msm7x27/arch/arm/include/asm/param.h \
     $(wildcard include/config/hz.h) \
